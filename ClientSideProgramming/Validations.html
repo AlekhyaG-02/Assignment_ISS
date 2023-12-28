@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Form Validation</title>
+  <style>
+    .error {
+      color: red;
+    }
+    .success {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  function validateForm() {
+    // Name validation
+    var name = document.myform.name.value;
+    if (name.trim() === "") {
+      document.getElementById("nameError").innerHTML = "Name can't be blank";
+      return false;
+    } else {
+      document.getElementById("nameError").innerHTML = "";
+    }
+
+    // Password validation
+    var password = document.myform.password.value;
+    if (password.length < 6) {
+      document.getElementById("passwordError").innerHTML = "Password must be at least 6 characters long.";
+      return false;
+    } else {
+      document.getElementById("passwordError").innerHTML = "";
+    }
+
+    // Retype Password validation
+    var confirmPassword = document.myform.password2.value;
+    if (password !== confirmPassword) {
+      document.getElementById("password2Error").innerHTML = "Passwords do not match.";
+      return false;
+    } else {
+      document.getElementById("password2Error").innerHTML = "";
+    }
+
+    // Numeric value validation
+    var num = document.myform.num.value;
+    if (isNaN(num)) {
+      document.getElementById("numError").innerHTML = "Enter Numeric value only";
+      return false;
+    } else {
+      document.getElementById("numError").innerHTML = "";
+    }
+
+    // Email validation
+    var email = document.myform.email.value;
+    var atPosition = email.indexOf("@");
+    var dotPosition = email.lastIndexOf(".");
+    if (atPosition < 1 || dotPosition < atPosition + 2 || dotPosition + 2 >= email.length) {
+      document.getElementById("emailError").innerHTML = "Please enter a valid e-mail address";
+      return false;
+    } else {
+      document.getElementById("emailError").innerHTML = "";
+    }
+
+    // All validations passed
+    return true;
+  }
+</script>
+
+<form name="myform" method="post" action="#" onsubmit="return validateForm()">
+  <label for="name">Name:</label>
+  <input type="text" name="name">
+  <span id="nameError" class="error"></span><br/>
+
+  <label for="password">Password:</label>
+  <input type="password" name="password">
+  <span id="passwordError" class="error"></span><br/>
+
+  <label for="password2">Re-enter Password:</label>
+  <input type="password" name="password2">
+  <span id="password2Error" class="error"></span><br/>
+
+  <label for="num">Number:</label>
+  <input type="text" name="num">
+  <span id="numError" class="error"></span><br/>
+
+  <label for="email">Email:</label>
+  <input type="text" name="email">
+  <span id="emailError" class="error"></span><br/>
+
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
