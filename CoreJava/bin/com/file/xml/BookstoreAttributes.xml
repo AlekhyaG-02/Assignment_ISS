@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookstore>
+  <!-- Book with attributes -->
+  <book id="001">
+    <!-- Title, author, and price as attributes -->
+    <title category="Programming">Java Programming</title>
+    <author>John Doe</author>
+    <price currency="USD">29.99</price>
+  </book>
+
+  <!-- Another book with attributes -->
+  <book id="002">
+    <title category="Web Development">Web Development Basics</title>
+    <author>Jane Smith</author>
+    <price currency="USD">19.95</price>
+  </book>
+
+</bookstore>

@@ -1,0 +1,31 @@
+<!-- bookstore.dtd (Document Type Definition) -->
+<!ELEMENT bookstore (book+)>
+<!ELEMENT book (title, author, price)>
+<!ATTLIST book
+          id CDATA #REQUIRED
+          category CDATA #IMPLIED>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ATTLIST price
+          currency CDATA #IMPLIED>
+
+<!-- bookstore.xml (XML Document) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore SYSTEM "bookstore.dtd">
+
+<bookstore>
+  <book id="001" category="Programming">
+    <title>Java Programming</title>
+    <author>John Doe</author>
+    <price currency="USD">29.99</price>
+  </book>
+
+  <book id="002" category="Web Development">
+    <title>Web Development Basics</title>
+    <author>Jane Smith</author>
+    <price currency="USD">19.95</price>
+  </book>
+
+  <!-- Additional book entries can be added as needed -->
+</bookstore>

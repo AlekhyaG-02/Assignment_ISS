@@ -1,0 +1,17 @@
+{
+  "studentId": "12345",        
+  "firstName": "John",        
+  "lastName": "Doe",           
+  "age": 20,                   
+  "isMale": true,              
+  "grades": [                  
+    85,
+    90,
+    78
+  ],
+  "contact": {                 
+    "email": "john.doe@example.com",
+    "phone": "555-1234"
+  },
+  "isInternational": null      
+}
